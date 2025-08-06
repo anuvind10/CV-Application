@@ -3,14 +3,21 @@
 function Education() {
   return (
     <>
-      <div className="school info">
-        <label htmlFor="schoolName">School Name:</label>
-        <input type="text" name="schoolName" />
-        <label htmlFor="fromDate">From</label>
-        <input type="date" name="fromDate" id="fromDate" className="date" />
-        <label htmlFor="toDate">From</label>
-        <input type="date" name="toDate" id="toDate" className="date" />
+      <div className="schoolInfo">
+        <div>
+          <label htmlFor="schoolName">School Name:</label>
+          <input type="text" name="schoolName" />
+        </div>
+        <div>
+          <label htmlFor="fromDate">From</label>
+          <input type="date" name="fromDate" id="fromDate" className="date" />
+        </div>
+        <div>
+          <label htmlFor="toDate">To</label>
+          <input type="date" name="toDate" id="toDate" className="date" />
+        </div>
       </div>
+      <button>Add Education</button>
     </>
   );
 }

@@ -1,21 +1,21 @@
 // import { useState } from "react";
 
-function BasicInfo() {
+function PersonalInfo() {
   return (
     <>
-      <div className="firstName info">
+      <div className="firstName personalInfo">
         <label htmlFor="firstName">First Name:</label>
         <input type="text" id="firstName" />
       </div>
-      <div className="lastName info">
+      <div className="lastName personalInfo">
         <label htmlFor="lastName">Last Name:</label>
         <input type="text" id="lastName" />
       </div>
-      <div className="phoneInfo info">
+      <div className="phoneInfo personalInfo">
         <label htmlFor="phone">Phone:</label>
         <input type="number" id="phone" />
       </div>
-      <div className="emailInfo info">
+      <div className="emailInfo personalInfo">
         <label htmlFor="email">Email:</label>
         <input type="email" id="email" />
       </div>
@@ -23,4 +23,4 @@ function BasicInfo() {
   );
 }
 
-export default BasicInfo;
+export default PersonalInfo;
