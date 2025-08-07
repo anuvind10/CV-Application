@@ -1,6 +1,7 @@
 #root {
   width: 100%;
   display: flex;
+  padding: 0 5em;
 }
 
 .input-section {
@@ -8,13 +9,8 @@
   max-width: 800px;
   height: auto;
   padding: 3em;
-  border: 1px solid white;
   border-radius: 10px;
 }
-
-/* section > h2 {
-  align-self: center;
-} */
 
 section > div {
   padding: 5px;
@@ -58,4 +54,9 @@ section > div {
 input {
   margin-left: 5px;
   padding: 2px 5px;
+}
+
+.CV-preview {
+  width: 100%;
+  height: auto;
 }
