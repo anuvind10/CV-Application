@@ -1,31 +1,43 @@
-// import { useState } from "react";
+import { useState } from "react";
 
 function Experience() {
-  // const [experiences, setExperiences] = useState();
+  const [experiences, setExperiences] = useState([{ id: Date.now() }]);
 
-  // function addExperience() {
-  // setExperiences((prev) => {
-  // [...prev, { id: Date.now() + Math.random() }];
-  // });
-  // }
+  function addExperience() {
+    setExperiences((prev) => {
+      return [...prev, { id: Date.now() + Math.random() }];
+    });
+  }
 
   return (
     <>
-      <div className="experienceInfo">
-        <div>
-          <label htmlFor="Company">Company:</label>
-          <input type="text" id="Company" />
+      {experiences.map((exp) => (
+        <div key={exp.id} className="experienceInfo">
+          <div>
+            <label htmlFor={`company-${exp.id}`}>Company:</label>
+            <input type="text" id={`company-${exp.id}`} />
+          </div>
+          <div>
+            <label htmlFor={`fromDate-${exp.id}`}>From:</label>
+            <input
+              type="date"
+              name={`fromDate-${exp.id}`}
+              id={`fromDate-${exp.id}`}
+              className="date"
+            />
+          </div>
+          <div>
+            <label htmlFor={`toDate-${exp.id}`}>To:</label>
+            <input
+              type="date"
+              name={`toDate-${exp.id}`}
+              id={`toDate-${exp.id}`}
+              className="date"
+            />
+          </div>
         </div>
-        <div>
-          <label htmlFor="fromDate">From:</label>
-          <input type="date" name="fromDate" id="fromDate" className="date" />
-        </div>
-        <div>
-          <label htmlFor="toDate">To:</label>
-          <input type="date" name="toDate" id="toDate" className="date" />
-        </div>
-      </div>
-      <button>Add Experience</button>
+      ))}
+      <button onClick={addExperience}>Add Experience</button>
     </>
   );
 }
