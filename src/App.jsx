@@ -5,43 +5,39 @@ import Experience from "./components/Experience";
 import expandIcon from "./images/expand.svg";
 // import collapse from "./images/collapse.svg";
 
+function Section({ className, header, section }) {
+  return (
+    <>
+      <section className={className}>
+        <div className="header">
+          <h2>{header}</h2>
+          <img src={expandIcon} alt="expand section" className="toggle-icon" />
+        </div>
+        {section}
+      </section>
+    </>
+  );
+}
+
 function App() {
   return (
     <>
       <div className="input-section">
-        <section className="personalInfo">
-          <div className="header">
-            <h2>Personal Details</h2>
-            <img
-              src={expandIcon}
-              className="toggle-icon"
-              id="personal-toggle"
-            />
-          </div>
-          <PersonalInfo></PersonalInfo>
-        </section>
-        <section className="experience">
-          <div className="header">
-            <h2>Experience</h2>
-            <img
-              src={expandIcon}
-              className="toggle-icon"
-              id="experience-toggle"
-            />
-          </div>
-          <Experience></Experience>
-        </section>
-        <section className="education">
-          <div className="header">
-            <h2>Education</h2>
-            <img
-              src={expandIcon}
-              className="toggle-icon"
-              id="education-toggle"
-            />
-          </div>
-          <Education></Education>
-        </section>
+        <Section
+          className="personal-info"
+          header="Personal Details"
+          section={<PersonalInfo></PersonalInfo>}
+        ></Section>
+        <Section
+          className="experience"
+          header="Experience"
+          section={<Experience></Experience>}
+        ></Section>
+        <Section
+          className="education"
+          header="Education"
+          section={<Education></Education>}
+        ></Section>
       </div>
       <div className="CV-preview">
         <div className="CV-header"></div>
