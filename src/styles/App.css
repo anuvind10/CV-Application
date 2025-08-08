@@ -42,8 +42,8 @@ section > div {
   max-width: 200px;
 }
 
-.experienceInfo,
-.schoolInfo {
+.experience-info,
+.school-info {
   display: flex;
   gap: 1rem;
 }
@@ -59,4 +59,15 @@ input {
 .CV-preview {
   width: 100%;
   height: auto;
+}
+
+.remove-icon {
+  opacity: 0;
+  transition: opacity 100ms ease-in;
+}
+
+.experience-info:hover {
+  .remove-icon {
+    opacity: 1;
+  }
 }

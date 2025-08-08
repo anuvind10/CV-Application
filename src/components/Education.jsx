@@ -3,7 +3,7 @@
 function Education() {
   return (
     <>
-      <div className="schoolInfo">
+      <div className="school-info">
         <div>
           <label htmlFor="schoolName">School Name:</label>
           <input type="text" name="schoolName" />
