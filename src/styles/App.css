@@ -29,7 +29,13 @@ section > div {
 
 .toggle-icon {
   opacity: 0;
-  transition: opacity 100ms ease-in;
+  transition:
+    opacity 100ms ease-in,
+    transform 100ms ease;
+}
+
+.toggle-icon.expanded {
+  transform: rotate(180deg);
 }
 
 .personalInfo {
@@ -71,4 +77,18 @@ input {
   .remove-icon {
     opacity: 1;
   }
+}
+
+.section-content {
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.4s ease;
+  max-height: 0;
+  opacity: 0;
+}
+
+.section-content.expanded {
+  max-height: 1000px;
+  opacity: 1;
 }
