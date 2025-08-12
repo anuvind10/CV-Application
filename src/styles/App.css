@@ -38,6 +38,12 @@ section > div {
   transform: rotate(180deg);
 }
 
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
 .personalInfo {
   display: flex;
   flex-direction: column;
