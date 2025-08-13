@@ -3,21 +3,21 @@
 function PersonalInfo() {
   return (
     <>
-      <div className="firstName personalInfo">
-        <label htmlFor="firstName">First Name:</label>
-        <input type="text" id="firstName" />
+      <div className="personalInfo name">
+        <label htmlFor="name">Full Name</label>
+        <input type="text" id="name" placeholder="first and last name" />
       </div>
-      <div className="lastName personalInfo">
-        <label htmlFor="lastName">Last Name:</label>
-        <input type="text" id="lastName" />
-      </div>
-      <div className="phoneInfo personalInfo">
-        <label htmlFor="phone">Phone:</label>
-        <input type="number" id="phone" />
-      </div>
-      <div className="emailInfo personalInfo">
+      <div className="personalInfo emailInfo">
         <label htmlFor="email">Email:</label>
-        <input type="email" id="email" />
+        <input type="email" id="email" placeholder="johndoe@gmail.com" />
+      </div>
+      <div className="personalInfo phoneInfo">
+        <label htmlFor="phone">Phone:</label>
+        <input type="number" id="phone" placeholder="+91 9999988888" />
+      </div>
+      <div className="personalInfo addresss">
+        <label htmlFor="email">Address:</label>
+        <input type="text" id="address" placeholder="Bangalore, India 680005" />
       </div>
     </>
   );

@@ -18,8 +18,13 @@ function Education() {
     <>
       {educations.map((edu) => (
         <div key={`education-${edu.id}`} className="school-info">
-          <label htmlFor={`name-${edu.id}`}>School Name:</label>
-          <input type="text" name={`name-${edu.id}`} id={`name-${edu.id}`} />
+          <label htmlFor={`name-${edu.id}`}>Institute:</label>
+          <input
+            type="text"
+            name={`name-${edu.id}`}
+            id={`name-${edu.id}`}
+            placeholder="IIT Bombay"
+          />
           <label htmlFor={`fromDate-${edu.id}`}>From</label>
           <input
             type="date"
@@ -44,7 +49,9 @@ function Education() {
           />
         </div>
       ))}
-      <button onClick={addEducation}>Add Education</button>
+      <button onClick={addEducation} className="addBtn">
+        + Education
+      </button>
     </>
   );
 }

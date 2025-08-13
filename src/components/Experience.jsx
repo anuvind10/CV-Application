@@ -19,7 +19,7 @@ function Experience() {
       {experiences.map((exp) => (
         <div key={exp.id} className="experience-info">
           <label htmlFor={`company-${exp.id}`}>Company:</label>
-          <input type="text" id={`company-${exp.id}`} />
+          <input type="text" id={`company-${exp.id}`} placeholder="Google" />
           <label htmlFor={`fromDate-${exp.id}`}>From:</label>
           <input
             type="date"
@@ -42,7 +42,9 @@ function Experience() {
           />
         </div>
       ))}
-      <button onClick={addExperience}>Add Experience</button>
+      <button onClick={addExperience} className="addBtn">
+        + Experience
+      </button>
     </>
   );
 }
