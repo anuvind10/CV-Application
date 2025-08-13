@@ -2,6 +2,8 @@ import "./styles/App.css";
 import PersonalInfo from "./components/PersonalInfo";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
+import CVHeader from "./components/CVHeader";
+import CVContent from "./components/CVContent";
 import expandIcon from "./images/expand.svg";
 import { useState } from "react";
 // import collapse from "./images/collapse.svg";
@@ -57,8 +59,8 @@ function App() {
         ></Section>
       </div>
       <div className="CV-preview">
-        <div className="CV-header"></div>
-        <div className="CV-content"></div>
+        <CVHeader></CVHeader>
+        <CVContent></CVContent>
       </div>
     </>
   );

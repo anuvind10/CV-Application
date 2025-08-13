@@ -5,7 +5,7 @@ function PersonalInfo() {
     <>
       <div className="personalInfo name">
         <label htmlFor="name">Full Name</label>
-        <input type="text" id="name" placeholder="first and last name" />
+        <input type="text" id="name" placeholder="John Doe" />
       </div>
       <div className="personalInfo emailInfo">
         <label htmlFor="email">Email:</label>

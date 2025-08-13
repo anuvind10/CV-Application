@@ -61,6 +61,7 @@ input {
   border: 1px solid black;
   border-radius: 5px;
   padding: 5px 10px;
+  box-shadow: 1px 1px 10px 0px black;
 }
 
 .experience-info,
@@ -123,4 +124,9 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.CV-header {
+  max-height: 300px;
+  border: 1px solid red;
 }
