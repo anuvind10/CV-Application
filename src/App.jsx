@@ -33,13 +33,25 @@ function Section({ className, header, section, isActive, onActivate }) {
 function App() {
   const [activeSection, setActiveSection] = useState("personal-info");
 
+  const [personalInfo, setPersonlInfo] = useState({
+    fullname: "",
+    email: "",
+    phone: "",
+    address: "",
+  });
+
   return (
     <>
       <div className="input-section">
         <Section
           className="personal-info"
           header="Personal Details"
-          section={<PersonalInfo></PersonalInfo>}
+          section={
+            <PersonalInfo
+              personalInfo={personalInfo}
+              setPersonlInfo={setPersonlInfo}
+            ></PersonalInfo>
+          }
           isActive={activeSection === "personal-info"}
           onActivate={setActiveSection}
         ></Section>
@@ -59,7 +71,7 @@ function App() {
         ></Section>
       </div>
       <div className="CV-preview">
-        <CVHeader></CVHeader>
+        <CVHeader personalInfo={personalInfo}></CVHeader>
         <CVContent></CVContent>
       </div>
     </>

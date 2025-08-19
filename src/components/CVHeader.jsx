@@ -1,11 +1,11 @@
-function CVHeader() {
+function CVHeader({ personalInfo }) {
   return (
     <div className="CV-header">
-      <h2 className="name"></h2>
+      <h2 className="name">{personalInfo.name}</h2>
       <div className="contact-info">
-        <p id="email"></p>
-        <p id="phone"></p>
-        <p id="address"></p>
+        <p id="email">{personalInfo.email}</p>
+        <p id="phone">{personalInfo.phone}</p>
+        <p id="address">{personalInfo.address}</p>
       </div>
     </div>
   );
