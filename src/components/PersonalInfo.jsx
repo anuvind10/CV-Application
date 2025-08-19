@@ -7,9 +7,9 @@ function PersonalInfo({ personalInfo, setPersonlInfo }) {
           type="text"
           id="name"
           placeholder="John Doe"
-          value={personalInfo.name || ""}
+          value={personalInfo.fullname || ""}
           onChange={(e) => {
-            setPersonlInfo({ ...personalInfo, name: e.target.value });
+            setPersonlInfo({ ...personalInfo, fullname: e.target.value });
           }}
         />
       </div>
