@@ -40,6 +40,19 @@ function App() {
     address: "",
   });
 
+  const [experiences, setExperiences] = useState([
+    {
+      id: Date.now(),
+      name: "",
+      from: "",
+      to: "",
+    },
+  ]);
+
+  const [educations, setEducations] = useState([
+    { id: Date.now(), name: "", from: "", to: "" },
+  ]);
+
   return (
     <>
       <div className="input-section">
@@ -58,14 +71,24 @@ function App() {
         <Section
           className="experience"
           header="Experience"
-          section={<Experience></Experience>}
+          section={
+            <Experience
+              experiences={experiences}
+              setExperiences={setExperiences}
+            ></Experience>
+          }
           isActive={activeSection === "experience"}
           onActivate={setActiveSection}
         ></Section>
         <Section
           className="education"
           header="Education"
-          section={<Education></Education>}
+          section={
+            <Education
+              educations={educations}
+              setEducations={setEducations}
+            ></Education>
+          }
           isActive={activeSection === "education"}
           onActivate={setActiveSection}
         ></Section>
