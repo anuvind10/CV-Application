@@ -41,16 +41,11 @@ function App() {
   });
 
   const [experiences, setExperiences] = useState([
-    {
-      id: Date.now(),
-      name: "",
-      from: "",
-      to: "",
-    },
+    { id: Date.now() + Math.random(), name: "", from: "", to: "" },
   ]);
 
   const [educations, setEducations] = useState([
-    { id: Date.now(), name: "", from: "", to: "" },
+    { id: Date.now() + Math.random(), name: "", from: "", to: "" },
   ]);
 
   return (

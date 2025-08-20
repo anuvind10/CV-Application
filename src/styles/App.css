@@ -10,7 +10,6 @@
   height: auto;
   padding: 3em;
   border-radius: 10px;
-  box-shadow: 8px 7px 20px 0px black;
 }
 
 section > div {
@@ -126,7 +125,31 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.CV-preview {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px 7px black;
+  background-color: #242424;
+}
+
 .CV-header {
-  max-height: 300px;
-  border: 1px solid red;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #63198d;
+  border-radius: 10px 10px 0 0;
+}
+
+.CV-content {
+  height: 100%;
+  /* background-color: rgb(100, 100, 100); */
+}
+
+.contact-info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
 }
