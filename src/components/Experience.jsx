@@ -8,6 +8,7 @@ function Experience({ experiences, setExperiences }) {
       {
         id: Date.now() + Math.random(),
         name: "",
+        location: "",
         from: "",
         to: "",
         details: "",
@@ -30,39 +31,59 @@ function Experience({ experiences, setExperiences }) {
       {experiences.map((exp) => (
         <div key={exp.id} className="exp-container">
           <div className="experience-info">
-            <div className="exp-basic">
-              <label htmlFor={`company-${exp.id}`}>Company:</label>
-              <input
-                type="text"
-                id={`company-${exp.id}`}
-                placeholder="Google"
-                value={exp.name}
-                onChange={(e) => {
-                  updateExperiece(exp.id, "name", e.target.value);
-                }}
-              />
-              <label htmlFor={`fromDate-${exp.id}`}>From:</label>
-              <input
-                type="date"
-                name={`fromDate-${exp.id}`}
-                id={`fromDate-${exp.id}`}
-                className="date"
-                value={exp.from}
-                onChange={(e) => {
-                  updateExperiece(exp.id, "from", e.target.value);
-                }}
-              />
-              <label htmlFor={`toDate-${exp.id}`}>To:</label>
-              <input
-                type="date"
-                name={`toDate-${exp.id}`}
-                id={`toDate-${exp.id}`}
-                className="date"
-                value={exp.to}
-                onChange={(e) => {
-                  updateExperiece(exp.id, "to", e.target.value);
-                }}
-              />
+            <div className="company-details">
+              <div>
+                <label htmlFor={`company-${exp.id}`}>Company:</label>
+                <input
+                  type="text"
+                  id={`company-${exp.id}`}
+                  placeholder="Google"
+                  value={exp.name}
+                  onChange={(e) => {
+                    updateExperiece(exp.id, "name", e.target.value);
+                  }}
+                />
+              </div>
+              <div>
+                <label htmlFor={`location-${exp.id}`}>Location:</label>
+                <input
+                  type="text"
+                  id={`location-${exp.id}`}
+                  placeholder="Bangalore, India"
+                  value={exp.location}
+                  onChange={(e) => {
+                    updateExperiece(exp.id, "location", e.target.value);
+                  }}
+                />
+              </div>
+            </div>
+            <div className="company-duration">
+              <div>
+                <label htmlFor={`fromDate-${exp.id}`}>From:</label>
+                <input
+                  type="date"
+                  name={`fromDate-${exp.id}`}
+                  id={`fromDate-${exp.id}`}
+                  className="date"
+                  value={exp.from}
+                  onChange={(e) => {
+                    updateExperiece(exp.id, "from", e.target.value);
+                  }}
+                />
+              </div>
+              <div>
+                <label htmlFor={`toDate-${exp.id}`}>To:</label>
+                <input
+                  type="date"
+                  name={`toDate-${exp.id}`}
+                  id={`toDate-${exp.id}`}
+                  className="date"
+                  value={exp.to}
+                  onChange={(e) => {
+                    updateExperiece(exp.id, "to", e.target.value);
+                  }}
+                />
+              </div>
             </div>
             <div className="exp-details">
               <label htmlFor={`details-${exp.id}`}>Details:</label>
@@ -80,7 +101,7 @@ function Experience({ experiences, setExperiences }) {
           <div>
             <img
               src={removeIcon}
-              alt="remove experience"
+              alt="remove"
               className="remove-icon"
               onClick={() => removeExperience(exp.id)}
             />

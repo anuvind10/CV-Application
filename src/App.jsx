@@ -41,7 +41,14 @@ function App() {
   });
 
   const [experiences, setExperiences] = useState([
-    { id: Date.now() + Math.random(), name: "", from: "", to: "", details: "" },
+    {
+      id: Date.now() + Math.random(),
+      name: "",
+      location: "",
+      from: "",
+      to: "",
+      details: "",
+    },
   ]);
 
   const [educations, setEducations] = useState([
@@ -64,7 +71,7 @@ function App() {
           onActivate={setActiveSection}
         ></Section>
         <Section
-          className="experience"
+          className="experience-input"
           header="Experience"
           section={
             <Experience
@@ -76,7 +83,7 @@ function App() {
           onActivate={setActiveSection}
         ></Section>
         <Section
-          className="education"
+          className="education-input"
           header="Education"
           section={
             <Education
