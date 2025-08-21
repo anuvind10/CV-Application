@@ -41,7 +41,7 @@ function App() {
   });
 
   const [experiences, setExperiences] = useState([
-    { id: Date.now() + Math.random(), name: "", from: "", to: "" },
+    { id: Date.now() + Math.random(), name: "", from: "", to: "", details: "" },
   ]);
 
   const [educations, setEducations] = useState([
@@ -90,7 +90,10 @@ function App() {
       </div>
       <div className="CV-preview">
         <CVHeader personalInfo={personalInfo}></CVHeader>
-        <CVContent></CVContent>
+        <CVContent
+          experiences={experiences}
+          educations={educations}
+        ></CVContent>
       </div>
     </>
   );
