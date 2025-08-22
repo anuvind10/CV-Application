@@ -9,12 +9,12 @@ function CVContent({ experiences, educations }) {
               <div className="date-disp">
                 <p>{exp.from}</p>
                 <p>-</p>
-                <p>{exp.to}</p>
+                <p>{exp.to !== "" ? exp.to : "present"}</p>
               </div>
               <p>{exp.location}</p>
             </div>
             <div className="experience-right">
-              <p>{exp.name}</p>
+              <p className="company-name">{exp.name}</p>
               <p>{exp.details}</p>
             </div>
           </div>
