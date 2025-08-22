@@ -65,20 +65,23 @@ textarea {
 }
 
 .exp-container,
-.school-info {
+.edu-container {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.experience-info {
+.experience-info,
+.edu-info {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .company-details,
+.institute-details,
 .company-duration,
+.institute-duration,
 .exp-details {
   display: flex;
   gap: 2rem;
@@ -100,7 +103,7 @@ textarea {
 }
 
 .exp-container:hover,
-.school-info:hover {
+.edu-container:hover {
   .remove-icon {
     opacity: 1;
   }
@@ -170,7 +173,8 @@ button:focus-visible {
   }
 }
 
-.experience-preview {
+.experience-preview,
+.education-preview {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -184,7 +188,8 @@ button:focus-visible {
   gap: 2em;
 }
 
-.experience {
+.experience,
+.education {
   display: flex;
   width: 100%;
   > div {
@@ -192,14 +197,16 @@ button:focus-visible {
   }
 }
 
-.experience-left {
+.experience-left,
+.education-left {
   width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.experience-right {
+.experience-right,
+.education-right {
   width: 70%;
   min-width: 0;
   > p {

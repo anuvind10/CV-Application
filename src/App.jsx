@@ -4,9 +4,7 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 import CVHeader from "./components/CVHeader";
 import CVContent from "./components/CVContent";
-import expandIcon from "./images/expand.svg";
 import { useState } from "react";
-// import collapse from "./images/collapse.svg";
 
 function Section({ className, header, section, isActive, onActivate }) {
   return (
@@ -14,11 +12,6 @@ function Section({ className, header, section, isActive, onActivate }) {
       <section className={className}>
         <div className="header" onClick={() => onActivate(className)}>
           <h2>{header}</h2>
-          <img
-            src={expandIcon}
-            alt="expand section"
-            className={`toggle-icon ${isActive ? "expanded" : "collapsed"}`}
-          />
         </div>
         <div
           className={`section-content ${isActive ? "expanded" : "collapsed"}`}
@@ -52,7 +45,14 @@ function App() {
   ]);
 
   const [educations, setEducations] = useState([
-    { id: Date.now() + Math.random(), name: "", from: "", to: "" },
+    {
+      id: Date.now() + Math.random(),
+      name: "",
+      location: "",
+      from: "",
+      to: "",
+      course: "",
+    },
   ]);
 
   return (

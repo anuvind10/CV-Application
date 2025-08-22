@@ -25,10 +25,21 @@ function CVContent({ experiences, educations }) {
       <h2>Education</h2>
       <div className="education-preview">
         {educations.map((edu) => (
-          <div key={edu.id}>
-            <p>{edu.name}</p>
-            <p>{edu.from}</p>
-            <p>{edu.to}</p>
+          <div key={edu.id} className="education">
+            <div className="education-left">
+              <div className="date-disp">
+                <p>{edu.from}</p>
+                <p>{edu.from !== "" ? "-" : ""}</p>
+                <p>
+                  {edu.to !== "" ? edu.to : edu.from !== "" ? "present" : ""}
+                </p>
+              </div>
+              <p>{edu.location}</p>
+            </div>
+            <div className="education-right">
+              <p className="institute-name">{edu.name}</p>
+              <p>{edu.course}</p>
+            </div>
           </div>
         ))}
       </div>

@@ -101,7 +101,7 @@ function Experience({ experiences, setExperiences }) {
           <div>
             <img
               src={removeIcon}
-              alt="remove"
+              alt="remove experience"
               className="remove-icon"
               onClick={() => removeExperience(exp.id)}
             />
