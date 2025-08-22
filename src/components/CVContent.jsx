@@ -8,8 +8,10 @@ function CVContent({ experiences, educations }) {
             <div className="experience-left">
               <div className="date-disp">
                 <p>{exp.from}</p>
-                <p>-</p>
-                <p>{exp.to !== "" ? exp.to : "present"}</p>
+                <p>{exp.from !== "" ? "-" : ""}</p>
+                <p>
+                  {exp.to !== "" ? exp.to : exp.from !== "" ? "present" : ""}
+                </p>
               </div>
               <p>{exp.location}</p>
             </div>
