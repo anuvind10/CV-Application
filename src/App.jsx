@@ -4,7 +4,8 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 import CVHeader from "./components/CVHeader";
 import CVContent from "./components/CVContent";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import html2pdf from "html2pdf.js";
 
 function Section({ className, header, section, isActive, onActivate }) {
   return (
@@ -24,15 +25,14 @@ function Section({ className, header, section, isActive, onActivate }) {
 }
 
 function App() {
+  const formRef = useRef();
   const [activeSection, setActiveSection] = useState("personal-info");
-
   const [personalInfo, setPersonlInfo] = useState({
     fullname: "",
     email: "",
     phone: "",
     address: "",
   });
-
   const [experiences, setExperiences] = useState([
     {
       id: Date.now() + Math.random(),
@@ -43,7 +43,6 @@ function App() {
       details: "",
     },
   ]);
-
   const [educations, setEducations] = useState([
     {
       id: Date.now() + Math.random(),
@@ -79,12 +78,27 @@ function App() {
     ]);
   }
 
+  function saveCV() {
+    const element = formRef.current;
+    const options = {
+      margin: 10,
+      filename: "My-CV.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    };
+    html2pdf().set(options).from(element).save();
+  }
+
   return (
     <>
       <div className="input-section">
-        <div className="clear">
+        <div className="btns">
           <button onClick={clearCV} className="clear-btn">
             Clear
+          </button>
+          <button onClick={saveCV} className="save-btn">
+            Save
           </button>
         </div>
         <Section
@@ -124,7 +138,7 @@ function App() {
           onActivate={setActiveSection}
         ></Section>
       </div>
-      <div className="CV-preview">
+      <div className="CV-preview" ref={formRef}>
         <CVHeader personalInfo={personalInfo}></CVHeader>
         <CVContent
           experiences={experiences}

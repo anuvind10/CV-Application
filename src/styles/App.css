@@ -217,3 +217,8 @@ button:focus-visible {
 .clear {
   align-self: flex-end;
 }
+
+.btns {
+  display: flex;
+  gap: 1em;
+}
