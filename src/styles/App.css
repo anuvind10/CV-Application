@@ -109,20 +109,6 @@ textarea {
   }
 }
 
-/* .section-content {
-  overflow: hidden;
-  transition:
-    max-height 0.4s ease,
-    opacity 0.4s ease;
-  max-height: 0;
-  opacity: 0;
-} */
-
-/* .section-content.expanded {
-  max-height: 1000px;
-  opacity: 1;
-} */
-
 button {
   width: 150px;
   align-self: center;
@@ -222,7 +208,12 @@ button:focus-visible {
   justify-content: center;
 }
 
-.company-name {
+.company-name,
+.institute-name {
   font-size: 20px;
   font-weight: bold;
+}
+
+.clear {
+  align-self: flex-end;
 }

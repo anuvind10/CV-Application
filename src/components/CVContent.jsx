@@ -1,7 +1,7 @@
 function CVContent({ experiences, educations }) {
   return (
     <div className="CV-content">
-      <h2>Experience</h2>
+      <h2>{experiences[0].name !== "" ? "Experience" : ""}</h2>
       <div className="experience-preview">
         {experiences.map((exp) => (
           <div key={exp.id} className="experience">
@@ -22,7 +22,7 @@ function CVContent({ experiences, educations }) {
           </div>
         ))}
       </div>
-      <h2>Education</h2>
+      <h2>{educations[0].name !== "" ? "Education" : ""}</h2>
       <div className="education-preview">
         {educations.map((edu) => (
           <div key={edu.id} className="education">

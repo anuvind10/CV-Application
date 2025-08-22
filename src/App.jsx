@@ -55,9 +55,38 @@ function App() {
     },
   ]);
 
+  function clearCV() {
+    setPersonlInfo({ fullname: "", email: "", phone: "", address: "" });
+    setExperiences([
+      {
+        id: Date.now() + Math.random(),
+        name: "",
+        location: "",
+        from: "",
+        to: "",
+        details: "",
+      },
+    ]);
+    setEducations([
+      {
+        id: Date.now() + Math.random(),
+        name: "",
+        location: "",
+        from: "",
+        to: "",
+        course: "",
+      },
+    ]);
+  }
+
   return (
     <>
       <div className="input-section">
+        <div className="clear">
+          <button onClick={clearCV} className="clear-btn">
+            Clear
+          </button>
+        </div>
         <Section
           className="personal-info"
           header="Personal Details"
